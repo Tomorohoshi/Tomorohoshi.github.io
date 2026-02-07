@@ -1,2 +1,0 @@
-this file is used to hold 0_data/sounds Directory.
-That's all.
