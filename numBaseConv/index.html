@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3VRHWGPB7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-G3VRHWGPB7');
+	</script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.css" integrity="sha384-DLNWBifkkOES5azVMtIZ7RYukF2HBwDMBcPyDl6VnXTdJKlv5aO1s6mnOLE0QUyP" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.js" integrity="sha384-SReR3XDzHJ+xHgprjPZ5oBp+3gHv4arv/iWnz2PGnkUH8lAYzPIIxY0C+I6F2G/o" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="style.css">
+	<title>なんでも進数変換ツール</title>
+</head>
+<body>
+	<h1>なんでも進数変換ツール</h1>
+	<span style="display: block; margin-bottom: 20px;">※このサイトではCookieを使用しています。</span>
+	<fieldset id="settingsField">
+		<legend>設定</legend>
+		<span style="margin-right: 20px;">
+			<label>変換する数値(≧0, 10進数):
+				<input type="number" id="input" min="0" step="any" placeholder="例: 10">
+			</label>
+			<details>
+				<summary>自動で数を増やし続けるツール</summary>
+				<label>間隔: <input type="number" min="0" step="any" id="autoIncInterval" value="0.1">秒</label>
+				<br>
+				<button id="autoIncStart">スタート</button>
+			</details>
+			<label>変換後の進数:<br>
+				<span>
+					<label>
+						<input type="radio" name="convType" value="normal" checked>
+						<input type="number" id="normalBase" min="1.00000000001" step="any" placeholder="例: 2">
+						進数</label>
+					<label>
+						<input type="radio" name="convType" value="sqrt">
+						√(<input type="number" id="sqrtBase" min="2" step="any" placeholder="例: 5">)
+						進数</label>
+					<label>
+						<input type="radio" name="convType" value="pi">
+						<span class="formula">π</span>進数</label>
+				</span>
+			</label>
+		</span>
+		<span>
+			<details>
+				<summary>表記方法(使う数字の順番・基本的に変更しないでOK)</summary>
+				<textarea id="numList">0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ</textarea>
+			</details>
+			最大対応進数: <span id="maxBase">108</span>進数
+		</span>
+	</fieldset>
+	<div id="output" class="formula"></div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

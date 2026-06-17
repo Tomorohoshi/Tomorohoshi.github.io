@@ -1,0 +1,86 @@
+@font-face {
+	font-family: "originalFont";
+	src: url("/0_data/fonts/mgenplus-1pp-regular.ttf") format("truetype");
+	src: url(https://Tomorohoshi.github.io/0_data/fonts/mgenplus-1pp-regular.ttf);
+	/* ↑codeswing用 */
+}
+
+@font-face {
+	font-family: "boldFont";
+	src: url("/0_data/fonts/mgenplus-1pp-bold.ttf") format("truetype");
+	src: url(https://Tomorohoshi.github.io/0_data/fonts/mgenplus-1pp-bold.ttf);
+	/* ↑codeswing用 */
+}
+
+*:not(.formula):not(.formula *) {font-family: "originalFont";}
+
+h1 {
+	font-family: "boldFont";
+	margin-bottom: 0;
+}
+
+input[type=number] {
+	height: 1.2em;
+	width: 70px;
+	padding: auto;
+	font-size: .95em;
+	translate: 0 -1px;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+input[type=radio] {margin-left: 20px;}
+
+input.invalid {
+	color: red;
+	font-family: "boldFont";
+	background-color: #fdd;
+	border: 1.5px solid red;
+}
+
+fieldset#settingsField {
+	background-color: #4cf3;
+	border: 0;
+	border-radius: 10px;
+	padding-left: 15px;
+	line-height: 1.7em;
+
+	legend {
+		background-color: #8df;
+		padding: 3px 6px;
+		border-radius: 6px;
+	}
+
+	label:not(:has(#autoIncInterval)) {
+		display: block;
+		width: max-content;
+	}
+	
+	&>span>label {
+		margin: 5px 0;
+	}
+
+	&>span {
+		display: inline-table;
+		margin-top: 10px;
+	}
+}
+
+#input {width: 200px;}
+
+textarea#numList {
+	height: 100px;
+	width: 400px;
+}
+
+#output {
+	margin: 20px auto;
+	margin-left: 10px;
+	background-color: #f4f4f4;
+	border: 1px solid black;
+	font-size: 2em;
+	padding: 5px;
+	padding-bottom: 10px;
+	min-height: calc(2em - 20px);
+	width: 90vw;
+}
